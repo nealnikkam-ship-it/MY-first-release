@@ -10,6 +10,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    # Sets up a specific Python version on the runner
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
     # Requirement 1: Prints "Build Successful"
     - name: Print Status
       run: echo "Build Successful"
@@ -18,4 +24,5 @@ jobs:
     - name: Run Simple Script
       run: |
         echo "Starting verification..."
+        python --version
         echo "Environment check complete."
